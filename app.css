@@ -1,0 +1,70 @@
+/* Layout simple et lisible pour une sidebar responsive */
+:root {
+  --sidebar-width: 270px;
+}
+
+body {
+  background: #f6f7fb;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: auto;
+}
+
+.sidebar-badge {
+  width: 34px;
+  height: 34px;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.78);
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin: 4px 0;
+}
+
+.sidebar-nav .nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-nav .nav-link.active {
+  background: rgba(13, 110, 253, 0.25);
+  color: #fff;
+}
+
+.login-wrapper {
+  min-height: calc(100vh - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compact-form label {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+@media (max-width: 992px) {
+  :root {
+    --sidebar-width: 0px;
+  }
+  .sidebar {
+    display: none;
+  }
+}
+
