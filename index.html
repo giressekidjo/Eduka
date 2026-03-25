@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eduka - Gestion des paiements scolaires </title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="app.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <!-- Sidebar -->
+      <aside class="sidebar bg-dark text-white" id="appSidebar">
+        <div class="sidebar-header px-3 pt-4 pb-3">
+          <div class="d-flex align-items-center gap-2">
+            <div class="sidebar-badge rounded-2 bg-primary"></div>
+            <div>
+              <div class="fw-semibold">Eduka</div>
+              <div class="sidebar-subtitle text-white-50 small">Paiements scolaires</div>
+            </div>
+          </div>
+        </div>
+        <nav class="sidebar-nav px-2">
+          <a class="nav-link" href="#dashboard" data-route="dashboard">Tableau de bord</a>
+          <a class="nav-link" href="#students" data-route="students">Étudiants</a>
+          <a class="nav-link" href="#fees" data-route="fees">Frais & Affectations</a>
+          <a class="nav-link" href="#payments" data-route="payments">Paiements</a>
+          <a class="nav-link" href="#pending" data-route="pending">En attente</a>
+          <a class="nav-link" href="#receipts" data-route="receipts">Reçus</a>
+        </nav>
+        <div class="sidebar-footer px-2 pb-3">
+          <div class="d-grid">
+            <button type="button" class="btn btn-outline-light btn-sm" id="btnLogout">
+              Déconnexion
+            </button>
+          </div>
+          <div class="text-white-50 small mt-2 px-2" id="adminLabel"></div>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main class="main">
+        <header class="topbar bg-white border-bottom">
+          <div class="container-fluid px-3 py-2">
+            <div class="d-flex align-items-center justify-content-between gap-2">
+              <button
+                class="btn btn-outline-dark btn-sm d-lg-none"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mobileNav"
+                aria-controls="mobileNav"
+              >
+                Menu
+              </button>
+              <div>
+                <div class="fw-semibold" id="pageTitle">Eduka</div>
+                <div class="text-muted small" id="pageSubtitle"></div>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <div class="spinner-border spinner-border-sm text-primary d-none" id="globalSpinner"></div>
+                <div class="text-muted small" id="lastSyncLabel"></div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="container-fluid py-4">
+          <div class="card shadow-sm">
+            <div class="card-body" id="appContent">
+              <!-- Dynamically injected -->
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Mobile nav -->
+    <div
+      class="offcanvas offcanvas-start bg-dark text-white"
+      tabindex="-1"
+      id="mobileNav"
+      aria-labelledby="mobileNavLabel"
+    >
+      <div class="offcanvas-header">
+        <div class="d-flex align-items-center gap-2">
+          <div class="sidebar-badge rounded-2 bg-primary"></div>
+          <div>
+            <div class="fw-semibold" id="mobileNavLabel">Eduka</div>
+            <div class="text-white-50 small">Paiements scolaires</div>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+          aria-label="Fermer"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <nav class="sidebar-nav px-2">
+          <a class="nav-link" href="#dashboard" data-route="dashboard">Tableau de bord</a>
+          <a class="nav-link" href="#students" data-route="students">Étudiants</a>
+          <a class="nav-link" href="#fees" data-route="fees">Frais & Affectations</a>
+          <a class="nav-link" href="#payments" data-route="payments">Paiements</a>
+          <a class="nav-link" href="#pending" data-route="pending">En attente</a>
+          <a class="nav-link" href="#receipts" data-route="receipts">Reçus</a>
+        </nav>
+        <div class="px-2 pb-3 mt-3">
+          <div class="d-grid">
+            <button type="button" class="btn btn-outline-light btn-sm" id="btnLogoutMobile">
+              Déconnexion
+            </button>
+          </div>
+          <div class="text-white-50 small mt-2 px-2" id="adminLabelMobile"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
